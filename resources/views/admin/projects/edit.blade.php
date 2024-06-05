@@ -28,6 +28,15 @@
           <label for="image" class="form-label">Upload Image</label>
           <input class="form-control" type="file" id="image" name="image">
       </div>
+      <div class="mb-3" >
+        <label for="type_id" class="form-label" >Select a Type</label>
+        <select class="form-select"  id="type_id"  name="type_id" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          @foreach ($types as $type)
+            <option value="{{ $type->id }}">{{ $type->name }}</option>
+          @endforeach
+        </select>
+      </div>
       @if ($project->image)
           <div class="ms-img-container py-3">
             <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->name }}">

@@ -25,6 +25,9 @@
                       <p class="card-title"><strong>Project name:</strong> {{ $project->name }}</p>
                       <p class="card-text"><strong>Slug</strong>: {{ $project->slug }}</p>
                       <p class="card-text"><strong>Client name</strong>: {{ $project->client_name }}</p>
+                      @if ($project->type)
+                        <p class="card-text"><strong>Type</strong>: {{ $project->type->name }}</p>
+                      @endif
                       @if ($project->summary )
                         <p class="card-text"><strong>Summary:</strong> {{ $project->summary }}</p>
                       @endif

@@ -28,7 +28,16 @@
         <label for="image" class="form-label">Upload Image</label>
         <input class="form-control" type="file" id="image" name="image">
       </div>
-      <div class="mb-3">
+      <div class="mb-3" >
+        <label for="type_id" class="form-label" >Select a Type</label>
+        <select class="form-select"  id="type_id"  name="type_id" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          @foreach ($types as $type)
+            <option value="{{ $type->id }}">{{ $type->name }}</option>
+          @endforeach
+        </select>
+      </div>
+      <div class="mb-3 mt-4">
           <label for="summary" class="form-label">Summmary</label>
           <textarea class="form-control" id="description" rows="15" name="summary">{{ old('summary') }}</textarea>
       </div>
