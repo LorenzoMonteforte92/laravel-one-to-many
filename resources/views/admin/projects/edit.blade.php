@@ -33,7 +33,7 @@
         <select class="form-select"  id="type_id"  name="type_id" aria-label="Default select example">
           <option selected>Open this select menu</option>
           @foreach ($types as $type)
-            <option value="{{ $type->id }}">{{ $type->name }}</option>
+            <option @selected($type->id == old('type_id', $project->type_id )) value="{{ $type->id }}">{{ $type->name }}</option>
           @endforeach
         </select>
       </div>

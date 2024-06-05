@@ -53,7 +53,9 @@ class ProjectController extends Controller
             [
                 'name' => 'required|min:6|unique:projects,name', //unique si specifica il nome della tabella e della colonna
                 'client_name' => 'required|min:6|',
-                'image' => 'nullable|image|'
+                'image' => 'nullable|image|',
+                'type_id' => 'nullable|exists:types,id'
+                
             ]
         );
 
@@ -127,6 +129,8 @@ class ProjectController extends Controller
                 
                 'client_name' => 'required|min:6|',
                 'image' => 'nullable|image',
+                'type_id' => 'nullable|exists:types,id'
+                
             ]
         );
 
